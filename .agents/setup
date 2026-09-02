@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MISE_VERSION="v2026.9.0"
+MISE_BIN="$HOME/.local/bin/mise"
+BUNDLER_VERSION="4.0.12"
+packages=(
+  build-essential
+  ca-certificates
+  curl
+  ffmpeg
+  git
+  imagemagick
+  libffi-dev
+  libgmp-dev
+  libmariadb-dev
+  libpq-dev
+  libreadline-dev
+  libsqlite3-dev
+  libssl-dev
+  libvips-dev
+  libxml2-dev
+  libxslt1-dev
+  libyaml-dev
+  pkg-config
+  poppler-utils
+  postgresql-client
+  sqlite3
+  zlib1g-dev
+)
+
+missing_packages=()
+for package in "${packages[@]}"; do
+  if ! dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q "ok installed"; then
+    missing_packages+=("$package")
+  fi
+done
+
+if ((${#missing_packages[@]})); then
+  echo "Installing system packages: ${missing_packages[*]}"
+  sudo apt-get update
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "${missing_packages[@]}"
+fi
+
+mkdir -p "$HOME/.local/bin"
+if [[ ! -x "$MISE_BIN" ]] || [[ "$($MISE_BIN --version | awk '{print $1}')" != "${MISE_VERSION#v}" ]]; then
+  echo "Installing mise $MISE_VERSION"
+  curl --fail --location --silent --show-error https://mise.run |
+    MISE_INSTALL_PATH="$MISE_BIN" MISE_VERSION="$MISE_VERSION" sh
+fi
+
+profile_marker="# mise activation"
+if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
+  cat >> "$HOME/.bash_profile" <<'EOF'
+
+# mise activation
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$("$HOME/.local/bin/mise" activate bash)"
+fi
+EOF
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate bash)"
+
+echo "Installing the pinned Ruby toolchain"
+mise trust --yes
+mise install
+
+if ! gem list --installed --exact bundler --version "$BUNDLER_VERSION" >/dev/null; then
+  gem install bundler --version "$BUNDLER_VERSION" --no-document
+fi
+mise reshim
+
+echo "Installing Rails dependencies"
+if ! bundle _${BUNDLER_VERSION}_ check; then
+  bundle _${BUNDLER_VERSION}_ install --jobs "$(nproc)" --retry 3
+fi
+
+echo "Orb setup complete"
