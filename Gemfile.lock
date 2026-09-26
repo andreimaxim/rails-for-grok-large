@@ -527,7 +527,7 @@ GEM
       ffi (~> 1.12)
       logger
     ruby2_keywords (0.0.5)
-    rubyzip (2.4.1)
+    rubyzip (3.4.0)
     rufus-scheduler (3.9.2)
       fugit (~> 1.1, >= 1.11.1)
     sass-embedded (1.83.4)
@@ -544,11 +544,11 @@ GEM
     sdoc (2.6.5)
       rdoc (>= 5.0)
     securerandom (0.4.1)
-    selenium-webdriver (4.32.0)
+    selenium-webdriver (4.49.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
+      rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
     serverengine (2.0.7)
       sigdump (~> 0.2.2)
@@ -741,7 +741,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rails-omakase
   ruby-vips (~> 2.3)
-  rubyzip (~> 2.0)
+  rubyzip (~> 3.4)
   sdoc (~> 2.6.4)
   selenium-webdriver (>= 4.20.0)
   sneakers
@@ -971,7 +971,7 @@ CHECKSUMS
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby-vips (2.3.0) sha256=e685ec02c13969912debbd98019e50492e12989282da5f37d05f5471442f5374
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
-  rubyzip (2.4.1) sha256=8577c88edc1fde8935eb91064c5cb1aef9ad5494b940cf19c775ee833e075615
+  rubyzip (3.4.0) sha256=6de39bc9eba302b635a476d16c9e16b0872ad24517c2f98f2b3a7ea23caff57b
   rufus-scheduler (3.9.2) sha256=55fa9e4db0ff69d7f38c804f17baba0c9bce5cba39984ae3c5cf6c039d1323b9
   sass-embedded (1.83.4) sha256=616f52e8e4afbf72a6074d365f6ee3e08f3aa535ab91d9515e980bc12ea625b2
   sass-embedded (1.83.4-aarch64-linux-gnu) sha256=b2c1df0d39fa9bc0924f7b595a77cf8816878cebb32604bfdde7f69012a7d5d3
@@ -980,7 +980,7 @@ CHECKSUMS
   sass-embedded (1.83.4-x86_64-linux-gnu) sha256=4884125a60c4716d73f2c0b77096cb386fed1495ca5781625657c9045ff77fce
   sdoc (2.6.5) sha256=7998b61c10775ee3179ccb0253774332d139e2c0649c251091f5868107a09b86
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
-  selenium-webdriver (4.32.0) sha256=20dbdf27b586beeac9e2791a22312b414d0a30192b6ce144779f7dfde8ae8afe
+  selenium-webdriver (4.49.0) sha256=b430f091a3cababb356b6f6132e0e4f385b017819355f563557e1537819edc89
   serverengine (2.0.7) sha256=14ed2e1c4e940739d7a2b9a18450842781d5afd6f99575b7e9296a69014275be
   set (1.1.2) sha256=ca33a60d202e788041d94a5d4c12315b1639875576f1a266f3a10913646d8ef1
   sigdump (0.2.5) sha256=bb706c1cce70458b285d2c3a57121e801ccb79f68be7f7377692eb40b5437242
