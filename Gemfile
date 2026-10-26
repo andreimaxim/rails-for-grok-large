@@ -65,7 +65,7 @@ group :doc do
   gem "redcarpet", "~> 3.6.1", platforms: :ruby
   gem "w3c_validators", "~> 1.3.6"
   gem "rouge"
-  gem "rubyzip", "~> 2.0"
+  gem "rubyzip", "~> 3.4"
 end
 
 # Active Support
