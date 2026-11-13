@@ -112,8 +112,8 @@ GEM
   specs:
     action_text-trix (2.1.16)
       railties
-    addressable (2.8.7)
-      public_suffix (>= 2.0.2, < 7.0)
+    addressable (2.9.1)
+      public_suffix (>= 2.0.2, < 8.0)
     amq-protocol (2.3.2)
     argon2 (2.3.2)
       ffi (~> 1.15)
@@ -417,7 +417,7 @@ GEM
     psych (5.2.6)
       date
       stringio
-    public_suffix (6.0.1)
+    public_suffix (7.0.5)
     puma (6.5.0)
       nio4r (~> 2.0)
     queue_classic (4.0.0)
@@ -780,7 +780,7 @@ CHECKSUMS
   activerecord (8.2.0.alpha)
   activestorage (8.2.0.alpha)
   activesupport (8.2.0.alpha)
-  addressable (2.8.7) sha256=462986537cf3735ab5f3c0f557f14155d778f4b43ea4f485a9deb9c8f7c58232
+  addressable (2.9.1) sha256=f1212365945455c84e8d031eea40fc6bedf0c663a78d95b3ab93591040bc5c35
   amq-protocol (2.3.2) sha256=3d155ef8f2aed26b2f3fafd6d7ab57e5105865d409c3d9c43e72a40b73dda816
   argon2 (2.3.2) sha256=62b04170af37ca8d9975bc6e24dd3b74794e82a98e6d8cfa9ae95a76804a6f89
   ast (2.4.2) sha256=1e280232e6a33754cde542bc5ef85520b74db2aac73ec14acef453784447cc12
@@ -925,7 +925,7 @@ CHECKSUMS
   prism (1.7.0) sha256=10062f734bf7985c8424c44fac382ac04a58124ea3d220ec3ba9fe4f2da65103
   propshaft (1.3.1) sha256=9acc664ef67e819ffa3d95bd7ad4c3623ea799110c5f4dee67fa7e583e74c392
   psych (5.2.6) sha256=814328aa5dcb6d604d32126a20bc1cbcf05521a5b49dbb1a8b30a07e580f316e
-  public_suffix (6.0.1) sha256=61d44e1cab5cbbbe5b31068481cf16976dd0dc1b6b07bd95617ef8c5e3e00c6f
+  public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   puma (6.5.0) sha256=94d1b75cab7f356d52e4f1b17b9040a090889b341dbeee6ee3703f441dc189f2
   queue_classic (4.0.0) sha256=062e95c2728197565e8bf27642192d9c1461819c42273eaf028839e1a482fe5a
   raabro (1.4.0) sha256=d4fa9ff5172391edb92b242eed8be802d1934b1464061ae5e70d80962c5da882
